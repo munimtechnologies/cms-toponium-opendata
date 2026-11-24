@@ -1,0 +1,20 @@
+{
+  "name": "cmsskim-tt-p3-v1",
+  "kind": "compete",
+  "workdir": "E:\\MV2-Pursuit\\work\\20261124T162325Z-science\\cmstopo",
+  "image": "python:3.12",
+  "setup": [
+    "pip install -q 'uproot>=5.3,<6' 'awkward>=2.6,<3' numpy fsspec aiohttp requests"
+  ],
+  "run": [
+    "cd /work && python -m py_compile cmsskim.py test_cmsskim.py && python -m unittest -v test_cmsskim > /out/tests.txt 2>&1; rc=$?; cat /out/tests.txt; exit $rc",
+    "cd /work && sha256sum cmsskim.py test_cmsskim.py PREREG-CMSTOPO-v0.1.md | tee /out/sha256.txt && pip freeze > /out/versions.txt",
+    "cd /work && OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 timeout 20700 python cmsskim.py --sample tt --part 3 --nparts 4 --max-minutes 320 --step 20000 --out-dir /out > /out/run.txt 2>&1; rc=$?; grep -E '^CMSSKIM_' /out/run.txt | tail -n 60; tail -n 25 /out/run.txt; exit $rc"
+  ],
+  "network": true,
+  "data_urls": [],
+  "data_key": "cmsskim-tt-p3",
+  "cpu": 2,
+  "memory_gb": 2,
+  "timeout_minutes": 360
+}
