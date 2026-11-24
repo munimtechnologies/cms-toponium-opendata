@@ -1,0 +1,20 @@
+{
+  "name": "cmsfit-data-v1",
+  "kind": "compete",
+  "workdir": "E:\\MV2-Pursuit\\work\\<RUN>\\cmsfit-data",
+  "image": "python:3.12",
+  "setup": [
+    "pip install -q 'numpy>=1.26,<3' 'scipy>=1.11,<2'"
+  ],
+  "run": [
+    "cd /work && python -m py_compile cmsfit.py test_cmsfit.py && OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m unittest -v test_cmsfit > /out/tests.txt 2>&1; rc=$?; tail -n 40 /out/tests.txt; exit $rc",
+    "cd /work && sha256sum cmsfit.py test_cmsfit.py AMENDMENT-CMSTOPO-0.1.1.md manifest.json | tee /out/sha256.txt && pip freeze > /out/versions.txt",
+    "cd /work && OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 timeout 7000 python cmsfit.py --mode data --fetch manifest.json --skim-dir /work/skims --out-dir /out > /out/run.txt 2>&1; rc=$?; grep -E '^CMSFIT_' /out/run.txt | cut -c1-600; tail -n 20 /out/run.txt; exit $rc"
+  ],
+  "network": true,
+  "data_urls": [],
+  "data_key": "cmsfit-data",
+  "cpu": 2,
+  "memory_gb": 1,
+  "timeout_minutes": 130
+}

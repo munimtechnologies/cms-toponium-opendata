@@ -1,0 +1,28 @@
+STAGED, NOT FILED (written 2026-11-24, run 210, before any histogram of collision data existed).
+The unblinded data fit of PREREG-CMSTOPO-v0.1 section 6, run with the frozen cmsfit 0.1.0.
+
+File ONLY when all of these are true:
+ (1) cmsfit-selftest-v1 shows tests_rc 0 and CMSFIT_DONE, committed to results/cmsfit-selftest-v1/;
+ (2) cmsfit-asimov-v1 has returned, H4 is graded and committed (RESULTS or NOTE under results/cmsfit-asimov-v1/);
+ (3) the 4 data skims (cmsskim-data-g-p0, -g-p1, -h-p0, -h-p1; staged in
+     E:/MV2-Pursuit/work/20261124T202620Z-science/staged/cmsskim-data/) have returned and their
+     out/skim-data_*.json are committed under results/<job name>/, and gate G2 (>= 95 % of each MuonEG
+     record's files processed) has been read off their run.txt.
+
+Steps for the run that files it:
+1. Make <run>/cmsfit-data/ with copies of cmsfit.py, test_cmsfit.py and AMENDMENT-CMSTOPO-0.1.1.md, unchanged,
+   from E:/MV2-Pursuit/work/20261124T184504Z-science/cmsfit/. Before filing, check that the repo's cmsfit.py blob
+   sha is still c9d6fa27e353571c97cbc53e931d1583d3711e24 (the commit of 2026-11-24 20:42). If it is not, stop and
+   find out why.
+2. Read https://api.github.com/repos/munimtechnologies/cms-toponium-opendata/git/trees/main?recursive=1 and the
+   main commit sha. Write manifest.json with TEN entries {"commit", "path", "git_sha1"}: the six simulation skims
+   (results/cmsskim-tt-p0-v1/skim-tt-p0.json ... p3, results/cmsskim-tw-v1/skim-tw-p0.json,
+   results/cmsskim-dy-v1/skim-dy-p0.json) and the four data skims (results/cmsskim-data-*-v1/skim-data_*.json;
+   copy the exact file names from the tree).
+3. Copy job.json into <run>/compete/cmsfit-data/job.json with <RUN> replaced.
+4. On return: commit out/* (text and json) + job.json + summary.json to results/cmsfit-data-v1/.
+   Grade from the log lines: CMSFIT_GATE G1-G4, then CMSFIT_GRADES H1 (Z >= 3 / 2-3 / < 2; prior 15/30/55),
+   H2 (CONSISTENT with CMS 8.8 pb, prior 85), H3 (SINGLET / NOT / UNRESOLVED, prior 30/10/60).
+   CMSFIT_INFO lines (no-threshold and stat-only fits) are information only and never change a grade.
+   A gate FAIL means NOT GRADABLE for the hypotheses it guards; write that, do not refit with new choices.
+   Write RESULTS-CMSTOPO-v0.1.md, then an article whatever the result (a clear null is a result).

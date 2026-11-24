@@ -1,0 +1,14 @@
+STAGED, NOT FILED. File only after (1) cmsfit-selftest-v1 passed and (2) all six simulation skims
+(cmsskim-tt-p0..p3-v1, cmsskim-tw-v1, cmsskim-dy-v1) returned and their out/skim-*.json were committed to
+munimtechnologies/cms-toponium-opendata under results/<job name>/.
+
+Steps for the run that files it:
+1. Make a new folder <run>/cmsfit-asimov/ with copies of cmsfit.py, test_cmsfit.py,
+   AMENDMENT-CMSTOPO-0.1.1.md (unchanged, from E:/MV2-Pursuit/work/20261124T184504Z-science/cmsfit/).
+2. Read the git tree: https://api.github.com/repos/munimtechnologies/cms-toponium-opendata/git/trees/main?recursive=1
+   and the commit sha of main (https://api.github.com/repos/munimtechnologies/cms-toponium-opendata/commits/main).
+   Write manifest.json there: [{"commit": "<sha of main>", "path": "results/cmsskim-tt-p0-v1/skim-tt-p0.json",
+   "git_sha1": "<blob sha from the tree>"}, ... six entries (tt p0-p3, tw p0, dy p0)].
+   NEVER include data skims (asimov mode refuses them anyway, exit 7).
+3. Copy job.json below into <run>/compete/cmsfit-asimov/job.json with the workdir changed.
+4. Grade H4 from CMSFIT_H4 (HIGH >= 3 / MEDIUM 1.5-3 / LOW < 1.5; prior 20/55/25); gate G1 from CMSFIT_GATE G1.
