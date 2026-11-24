@@ -1,0 +1,22 @@
+test_gen_tt (test_cmsskim.TestGen.test_gen_tt) ... ok
+test_bins (test_cmsskim.TestNumeric.test_bins) ... ok
+test_cos_phi_gen (test_cmsskim.TestNumeric.test_cos_phi_gen) ... ok
+test_cos_star (test_cmsskim.TestNumeric.test_cos_star) ... ok
+test_dphi (test_cmsskim.TestNumeric.test_dphi) ... ok
+test_gen_class (test_cmsskim.TestNumeric.test_gen_class) ... ok
+test_lumi_mask (test_cmsskim.TestNumeric.test_lumi_mask) ... ok
+test_p4_mass (test_cmsskim.TestNumeric.test_p4_mass) ... ok
+test_rest_and_inverse (test_cmsskim.TestNumeric.test_rest_and_inverse) ... ok
+test_masks (test_cmsskim.TestSelection.test_masks) ... ok
+test_observables (test_cmsskim.TestSelection.test_observables) ... ok
+test_constants (test_cmsskim.TestStdlib.test_constants) ... ok
+test_extract (test_cmsskim.TestStdlib.test_extract) ... ok
+test_parse_ps (test_cmsskim.TestStdlib.test_parse_ps) ... ok
+test_parse_scale (test_cmsskim.TestStdlib.test_parse_scale) ... ok
+test_split_files (test_cmsskim.TestStdlib.test_split_files) ... ok
+test_url_forms (test_cmsskim.TestStdlib.test_url_forms) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.169s
+
+OK

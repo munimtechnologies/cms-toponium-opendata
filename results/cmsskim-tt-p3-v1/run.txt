@@ -1,0 +1,28 @@
+CMSSKIM_START version=0.1.0 sample=tt part=3/4 python=3.12.15 numpy=2.5.5 uproot=5.7.8 awkward=2.15.1
+CMSSKIM_RECORD 67801 /TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16NanoAODv9-106X_mcRun2_asymptotic_v17-v1/NANOAODSIM files_assigned=12
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/120000/4295A038-1506-FF44-A8EA-D0F727B626FC.root entries=1400000 sel=70498 sumw=1.00962e+08 sumw_runs=1.00962e+08 206s
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/120000/A244D71A-A8D7-C54E-B1E2-8584416AAD48.root entries=84000 sel=4148 sumw=6.05751e+06 sumw_runs=6.05751e+06 15s
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/130000/036C0AAB-FD0F-8647-93A9-575666C7003F.root entries=1301000 sel=66112 sumw=9.38038e+07 sumw_runs=9.38038e+07 190s
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/130000/1873AC0B-CE31-D04B-ACB9-1D818DE62D46.root entries=84000 sel=4165 sumw=6.05533e+06 sumw_runs=6.05533e+06 17s
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/130000/46BDA348-B525-9949-BCBE-7393372267A8.root entries=996000 sel=50212 sumw=7.18171e+07 sumw_runs=7.18171e+07 153s
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/130000/52883E35-521E-B843-900E-DD006D7C3CF5.root entries=1428000 sel=72053 sumw=1.02977e+08 sumw_runs=1.02977e+08 235s
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/130000/A7AE9140-B4B1-E848-BC3C-28C786CB2F4B.root entries=823000 sel=41491 sumw=5.93484e+07 sumw_runs=5.93484e+07 130s
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/130000/BF24693A-0A47-6E4F-A0AF-326C25DB68F5.root entries=1043000 sel=52758 sumw=7.52039e+07 sumw_runs=7.52039e+07 164s
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/130000/F6B9283D-DBF5-9748-B2BE-58529AED2689.root entries=766000 sel=38569 sumw=5.52336e+07 sumw_runs=5.52336e+07 124s
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/270000/97D424A1-D75F-5044-AB30-407BC129A045.root entries=1102000 sel=55400 sumw=7.94723e+07 sumw_runs=7.94723e+07 171s
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/70000/065AC2C6-0B33-9546-90F2-5819A044F0CE.root entries=1246000 sel=62691 sumw=8.98337e+07 sumw_runs=8.98337e+07 185s
+CMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0
+CMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/70000/D31DE67D-37F2-3C4C-B4F3-476D1918B317.root entries=1384000 sel=70291 sumw=9.98018e+07 sumw_runs=9.98018e+07 199s
+CMSSKIM_RECORD_DONE 67801 done=12 failed=0 skipped_time=0 entries=11657000 sel_nom=588388
+CMSSKIM_DONE files_ok=12 minutes=29.9
