@@ -1,0 +1,69 @@
+{
+ "contract": "mv2-compete-result-v1",
+ "name": "cmsskim-tt-p1-v1",
+ "id": "1087fb17a846",
+ "field": "science",
+ "run": "20261124T162325Z-science",
+ "kind": "compete",
+ "status": "ok",
+ "reason": "",
+ "host": "blade",
+ "image": "python:3.12",
+ "started_at": "2026-11-25T19:50:42.340809+00:00",
+ "finished_at": "2026-11-25T20:37:06.774487+00:00",
+ "duration_seconds": 2784,
+ "limits": {
+  "cpu": 2.0,
+  "memory_gb": 2.0,
+  "timeout_minutes": 360.0
+ },
+ "peak_memory_gb": 0.27,
+ "network": {
+  "setup": true,
+  "run": true
+ },
+ "steps": [
+  {
+   "step": "setup-01-pip",
+   "cmd": "pip install -q 'uproot>=5.3,<6' 'awkward>=2.6,<3' numpy fsspec aiohttp requests",
+   "exit": 0,
+   "seconds": 11
+  },
+  {
+   "step": "run-01-cd",
+   "cmd": "cd /work && python -m py_compile cmsskim.py test_cmsskim.py && python -m unittest -v test_cmsskim > /out/tests.txt 2>&1; rc=$?; cat /out/tests.txt; exit $rc",
+   "exit": 0,
+   "seconds": 1
+  },
+  {
+   "step": "run-02-cd",
+   "cmd": "cd /work && sha256sum cmsskim.py test_cmsskim.py PREREG-CMSTOPO-v0.1.md | tee /out/sha256.txt && pip freeze > /out/versions.txt",
+   "exit": 0,
+   "seconds": 1
+  },
+  {
+   "step": "run-03-cd",
+   "cmd": "cd /work && OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 timeout 20700 python cmsskim.py --sample tt --part 1 --nparts 4 --max-minutes 320 --step 20000 --out-dir /out > /out/run.txt 2>&1; rc=$?; grep -E '^CMSSKIM_' /out/run.txt | tail -n 60; tail -n 25 /out/run.txt; exit $rc",
+   "exit": 0,
+   "seconds": 2155
+  }
+ ],
+ "out_files": [
+  "run.txt",
+  "sha256.txt",
+  "skim-tt-p1.json",
+  "skim-tt-p1.txt",
+  "tests.txt",
+  "versions.txt"
+ ],
+ "out_files_total": 6,
+ "out_skipped": [],
+ "upload_skipped": [],
+ "summary_tail": "[run-03-cd stdout] 07 sumw_runs=8.4818e+07 236s\nCMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0\nCMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/130000/FE1609BC-9F31-8F4D-9A23-B94E8B0E4299.root entries=1428000 sel=72403 sumw=1.02976e+08 sumw_runs=1.02976e+08 275s\nCMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0\nCMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/280000/826395F0-39C8-BF45-AA23-8C58A6C632B2.root entries=805000 sel=40919 sumw=5.80499e+07 sumw_runs=5.80499e+07 166s\nCMSSKIM_GENCHECK has_gen=1.0000 hard=20000 fallback=0 none=0\nCMSSKIM_FILE OK root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20UL16NanoAODv9/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/NANOAODSIM/106X_mcRun2_asymptotic_v17-v1/70000/9F50F913-6EC7-8242-A2BD-4FC37A03EAC9.root entries=836000 sel=42290 sumw=6.02932e+07 sumw_runs=6.02932e+07 154s\nCMSSKIM_RECORD_DONE 67801 done=12 failed=0 skipped_time=0 entries=11210000 sel_nom=566491\nCMSSKIM_DONE files_ok=12 minutes=35.9\n",
+ "paths": {
+  "workdir": "/work (copy of E:\\MV2-Pursuit\\work\\20261124T162325Z-science\\cmstopo)",
+  "out": "/out -> out/",
+  "data": "/data (docker volume mv2c-data-cmsskim-tt-p1, kept for later jobs)"
+ },
+ "note": ""
+}
