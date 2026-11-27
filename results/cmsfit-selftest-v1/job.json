@@ -1,0 +1,54 @@
+{
+ "source": "E:\\MV2-Pursuit\\work\\20261124T184504Z-science\\compete\\cmsfit-selftest\\job.json",
+ "normalized": {
+  "id": "d7c6a62a6d53",
+  "name": "cmsfit-selftest-v1",
+  "job_path": "E:\\MV2-Pursuit\\work\\20261124T184504Z-science\\compete\\cmsfit-selftest\\job.json",
+  "run": "20261124T184504Z-science",
+  "field": "science",
+  "kind": "compete",
+  "workdir": "E:\\MV2-Pursuit\\work\\20261124T184504Z-science\\cmsfit",
+  "image": "python:3.12",
+  "run_network": true,
+  "network": true,
+  "setup": [
+   {
+    "name": "setup-01-pip",
+    "cmd": "pip install -q 'numpy>=1.26,<3' 'scipy>=1.11,<2'",
+    "timeout_seconds": 0
+   }
+  ],
+  "run_steps": [
+   {
+    "name": "run-01-cd",
+    "cmd": "cd /work && python -m py_compile cmsfit.py test_cmsfit.py > /out/compile.txt 2>&1; rc=$?; cat /out/compile.txt; exit $rc",
+    "timeout_seconds": 0
+   },
+   {
+    "name": "run-02-cd",
+    "cmd": "cd /work && OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 python -m unittest -v test_cmsfit > /out/tests.txt 2>&1; echo $? > /out/tests_rc.txt; tail -n 60 /out/tests.txt; exit 0",
+    "timeout_seconds": 0
+   },
+   {
+    "name": "run-03-cd",
+    "cmd": "cd /work && sha256sum cmsfit.py test_cmsfit.py AMENDMENT-CMSTOPO-0.1.1.md | tee /out/sha256.txt && pip freeze > /out/versions.txt",
+    "timeout_seconds": 0
+   },
+   {
+    "name": "run-04-cd",
+    "cmd": "cd /work && OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 timeout 3000 python cmsfit.py --mode selftest --out-dir /out > /out/run.txt 2>&1; rc=$?; grep -E '^CMSFIT_' /out/run.txt | cut -c1-600; tail -n 20 /out/run.txt; exit $rc",
+    "timeout_seconds": 0
+   },
+   {
+    "name": "run-05-cat",
+    "cmd": "cat /out/tests_rc.txt; exit $(cat /out/tests_rc.txt)",
+    "timeout_seconds": 0
+   }
+  ],
+  "data_urls": [],
+  "data_key": "cmsfit-selftest",
+  "cpu": 2.0,
+  "memory_gb": 1,
+  "timeout_minutes": 75.0
+ }
+}

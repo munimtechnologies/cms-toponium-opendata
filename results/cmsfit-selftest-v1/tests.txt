@@ -1,0 +1,54 @@
+test_asimov_mode_refuses_data (test_cmsfit.TestNumeric.test_asimov_mode_refuses_data) ... CMSFIT_START version=0.1.0 mode=asimov python=3.12.15 numpy=2.5.5 scipy=1.18.1
+CMSFIT_SKIMS n=5 kinds=['bkg', 'data', 'tt'] samples=['data_G', 'data_H', 'dy', 'tt', 'tw']
+CMSFIT_BLIND_ABORT data skims given in asimov mode
+/work/test_cmsfit.py:271: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpc17zxx3i/cmsfit-asimov.txt' mode='w' encoding='UTF-8'>
+  self.assertEqual(cf.main(["--mode", "asimov", "--skim-dir", d, "--out-dir", d, "--no-scan"]), 7)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_asimov_recovers (test_cmsfit.TestNumeric.test_asimov_recovers) ... ok
+test_gradient (test_cmsfit.TestNumeric.test_gradient) ... ok
+test_main_selftest (test_cmsfit.TestNumeric.test_main_selftest) ... CMSFIT_START version=0.1.0 mode=selftest python=3.12.15 numpy=2.5.5 scipy=1.18.1
+CMSFIT_SKIMS n=5 kinds=['bkg', 'data', 'tt'] samples=['data_G', 'data_H', 'dy', 'tt', 'tw']
+CMSFIT_GATE G1 PASS 
+CMSFIT_YIELDS {"tt_low": 13060.502767281068, "tt_rest": 59751.11429935478, "tW": 7660.307952000003, "other": 1992.5259669600007, "S_per_pb": {"singlet": 86.96624614373643, "triplet": 86.93634339398812, "unchanged": 86.93709510325803}, "D_win": 0.2998125, "max_delta": 0.12208602748947343}
+CMSFIT_ASIMOV target=singlet mu_true=8.8 mu_hat=8.800 k_tt=1.0000 Z_A=1.256 G4=True lo68=None hi68=None
+CMSFIT_ASIMOV target=singlet mu_true=6.4 mu_hat=6.400 k_tt=1.0000 Z_A=0.917 G4=True lo68=None hi68=None
+CMSFIT_ASIMOV target=triplet mu_true=8.8 mu_hat=8.800 k_tt=1.0000 Z_A=1.218 G4=True lo68=None hi68=None
+CMSFIT_ASIMOV target=triplet mu_true=6.4 mu_hat=6.400 k_tt=1.0000 Z_A=0.889 G4=True lo68=None hi68=None
+CMSFIT_ASIMOV target=unchanged mu_true=8.8 mu_hat=8.800 k_tt=1.0000 Z_A=1.217 G4=True lo68=None hi68=None
+CMSFIT_ASIMOV target=unchanged mu_true=6.4 mu_hat=6.400 k_tt=1.0000 Z_A=0.888 G4=True lo68=None hi68=None
+CMSFIT_H4 Z_A=1.256 Z_A_6.4=0.917 G4=True grade=LOW
+CMSFIT_GATE G2 PASS 
+CMSFIT_DATA target=singlet mu_hat=8.817 k_tt=1.0000 Z=1.258 nll_sb=0.0006 nll_b=0.7922 G4=True lo68=None hi68=None
+CMSFIT_DATA target=triplet mu_hat=8.453 k_tt=0.9995 Z=1.167 nll_sb=0.1108 nll_b=0.7922 G4=True lo68=None hi68=None
+CMSFIT_DATA target=unchanged mu_hat=8.494 k_tt=0.9995 Z=1.172 nll_sb=0.1056 nll_b=0.7922 G4=True lo68=None hi68=None
+CMSFIT_INFO no_thr mu_hat=8.814 Z=1.324 | stat_only mu_hat=8.804 Z=3.313
+CMSFIT_GATE G3 PASS k_tt=1.0000
+CMSFIT_GATE G4 PASS sb_spread=0.00000 b_spread=0.00000
+CMSFIT_GRADES H1=NOT SEEN H2=NOT GRADABLE H3=UNRESOLVED (Z=1.258 mu_hat=8.817 [None, None])
+CMSFIT_SELFTEST note=synthetic templates, never graded; injected mu=8.8
+CMSFIT_DONE seconds=3.1
+ok
+test_no_signal (test_cmsfit.TestNumeric.test_no_signal) ... ok
+test_pseudo_data (test_cmsfit.TestNumeric.test_pseudo_data) ... ok
+test_scan_interval (test_cmsfit.TestNumeric.test_scan_interval) ... ok
+test_signal_norm (test_cmsfit.TestNumeric.test_signal_norm) ... ok
+test_stat_only_model (test_cmsfit.TestNumeric.test_stat_only_model) ... ok
+test_templates (test_cmsfit.TestNumeric.test_templates) ... ok
+test_class_centres (test_cmsfit.TestStdlib.test_class_centres) ... ok
+test_constants (test_cmsfit.TestStdlib.test_constants) ... ok
+test_d_win (test_cmsfit.TestStdlib.test_d_win) ... ok
+test_g1_failures (test_cmsfit.TestStdlib.test_g1_failures) ... ok
+test_g2 (test_cmsfit.TestStdlib.test_g2) ... ok
+test_gamma_bb (test_cmsfit.TestStdlib.test_gamma_bb) ... ok
+test_git_blob_sha1 (test_cmsfit.TestStdlib.test_git_blob_sha1) ... ok
+test_grades (test_cmsfit.TestStdlib.test_grades) ... ok
+test_interval (test_cmsfit.TestStdlib.test_interval) ... ok
+test_merge_and_g1 (test_cmsfit.TestStdlib.test_merge_and_g1) ... ok
+test_merge_errors (test_cmsfit.TestStdlib.test_merge_errors) ... ok
+test_spin_weights (test_cmsfit.TestStdlib.test_spin_weights) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 20.596s
+
+OK
